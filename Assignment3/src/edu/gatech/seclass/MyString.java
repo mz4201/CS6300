@@ -41,10 +41,25 @@ public class MyString implements MyStringInterface {
             throw new NullPointerException();
         }
 
+        //replace non-alphabetic words with space
         String cleanInput = this.mystring.replaceAll("[^a-zA-Z]"," ");
+        //split into array
         String[] words = cleanInput.split("\\s+");
-        return words.length;
-        //throw NullPointerException if string is null
+        //remove empty string from string array
+        int count = 0;
+        for (String wordCount : words) {
+            if (!wordCount.trim().isEmpty()) {
+                count++;
+            }
+        }
+        String[] trimmedWords = new String[count];
+        int index = 0;
+        for (String word : words) {
+            if (!word.trim().isEmpty()) {
+                trimmedWords[index++] = word.trim();
+            }
+        }
+        return trimmedWords.length;
     }
 
     @Override
