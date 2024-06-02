@@ -102,7 +102,7 @@ public class MyStringTest {
     }
 
     @Test
-    // Description: Test for another example
+    // Description: Test for another encrypt example
     public void testEncrypt6() {
         myString.setString("Wendy's 4for4 Value Meal, tast3 so g00d!");
         assertEquals("bDE2T'I mKLBm zGVWD yDGV, PGIPJ IL R772!", myString.encrypt(7, 7));
@@ -139,7 +139,7 @@ public class MyStringTest {
     }
 
     @Test
-    // Description: Test for another example
+    // Description: Test for another convertDigitsToNamesInSubstring example
     public void testConvertDigitsToNamesInSubstring5() {
         myString.setString("Today is 6/2/2024, and I am 26 years old turning 27 years old this year.");
         myString.convertDigitsToNamesInSubstring(2, 20);
