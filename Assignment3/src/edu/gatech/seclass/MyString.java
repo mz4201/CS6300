@@ -17,7 +17,7 @@ public class MyString implements MyStringInterface {
             throw new IllegalArgumentException();
         }
         //check if string is empty
-        if (string.isEmpty()){
+        if (string.equals("")){
             throw new IllegalArgumentException();
         }
         //check if string does not contain at least one letter or number
@@ -123,7 +123,7 @@ public class MyString implements MyStringInterface {
         if (this.mystring == null){
             throw new NullPointerException();
         }
-        if (finalPosition < 1 || firstPosition > finalPosition){
+        if (firstPosition < 1 || firstPosition > finalPosition){
             throw new IllegalArgumentException();
         }
         if (finalPosition > this.mystring.length() ){
