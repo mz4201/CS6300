@@ -61,9 +61,9 @@ public class MyStringTest {
     }
 
     @Test
-    // Description: Test for string with no alphabetical words
+    // Description: Test for string with no alphanumerical letters
     public void testSetString1() {
-        assertThrows(IllegalArgumentException.class, () -> myString.setString("11@0#3$"));
+        assertThrows(IllegalArgumentException.class, () -> myString.setString("??..@#$"));
     }
 
     @Test

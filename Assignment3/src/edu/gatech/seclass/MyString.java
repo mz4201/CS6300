@@ -21,21 +21,10 @@ public class MyString implements MyStringInterface {
             throw new IllegalArgumentException();
         }
         //check if string contains only non-digits/non-alphabetic char
-        //check if string does not contain at least one letter or number
-        boolean noLetterOrNum = true;
-        for (char c: string.toCharArray()){
-            if (Character.isLetter(c)){
-                noLetterOrNum = false;
-            }
-        }
-        if (noLetterOrNum){
-            throw new IllegalArgumentException();
-        }
-        /*
+
         if (!string.matches(".*[a-zA-Z0-9].*")) {
             throw new IllegalArgumentException();
         }
-        */
 
         this.mystring = string;
     }
