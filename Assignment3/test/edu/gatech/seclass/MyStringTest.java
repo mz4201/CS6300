@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Timeout;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Timeout.ThreadMode;
 
-import static org.junit.jupiter.api.Assertions.fail;
-
 
 /**
  * Junit test class created for use in Georgia Tech CS6300.
