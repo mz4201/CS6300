@@ -20,6 +20,11 @@ public class MyString implements MyStringInterface {
         if (string.equals("")){
             throw new IllegalArgumentException();
         }
+
+        if (!string.matches(".*[a-zA-Z0-9].*")) {
+            throw new IllegalArgumentException();
+        }
+        /*
         //check if string does not contain at least one letter or number
         boolean noLetterOrNum = true;
         for (char c: string.toCharArray()){
@@ -30,9 +35,10 @@ public class MyString implements MyStringInterface {
         if (noLetterOrNum){
             throw new IllegalArgumentException();
         }
-
+        */
         this.mystring = string;
     }
+
 
     @Override
     //Returns the number of alphabetic words in current string
