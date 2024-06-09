@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         //assign adder, input as string then convert to int
         String tempAdder = adderInputID.getText().toString();
         int adder = Integer.parseInt(tempAdder);
-        if (adder < 1) {
+        if (adder < 1 || adder >= 62) {
             adderInputID.setError("Invalid Adder Input");
             hasError = true;
         }
