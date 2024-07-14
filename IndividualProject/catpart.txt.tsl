@@ -1,0 +1,928 @@
+
+Test Case 1  		<error>
+   Presence of the input file in the folder :  File does not exist
+
+
+Test Case 2  		<error>
+   Newline at end of file :  Not present
+
+
+Test Case 3  		<single>
+   Empty file :  Empty
+
+
+Test Case 4  		<error>
+   Last parameter is input file :  Not present
+
+
+Test Case 5  		<error>
+   Repeated options, only last occurrence applies :  False
+
+
+Test Case 6  		<error>
+   Execution order :  Not follow programmed order
+
+
+Test Case 7  		<error>
+   Each option is recognized with given format :  Not recognized
+
+
+Test Case 8  		<error>
+   k param input :  Null
+
+
+Test Case 9  		<single>  (follows [if])
+   k param input :  0
+
+
+Test Case 10 		<error>  (follows [if])
+   k param input :  More than file length
+
+
+Test Case 11 		<error>
+   Presence of p and t :  Both p and t
+
+
+Test Case 12 		<error>
+   p and t num input :  Non-integer
+
+
+Test Case 13 		<error>
+   p input is valid :  Null
+
+
+Test Case 14 		<error>
+   p input is valid :  Not char and num
+
+
+Test Case 15 		<error>
+   p maxPadding num range :  <1 and >100
+
+
+Test Case 16 		<error>
+   t num range :  <0 and >100
+
+
+Test Case 17 		<error>
+   Presence of f and g :  Only g
+
+
+Test Case 18 		<single>
+   Presence of f and g :  Neither
+
+
+Test Case 19 		<error>
+   f style parameter :  Anything else
+
+
+Test Case 20 		<error>
+   f style parameter :  Null
+
+
+Test Case 21 		<error>
+   f substring parameter :  Empty
+
+
+Test Case 22 		<error>
+   f substring parameter :  Null
+
+
+Test Case 23 		<error>
+   g param :  Not null
+
+
+Test Case 24 		<single>
+   r is present in command :  Not present
+
+
+Test Case 25 		<error>
+   r param :  Present
+
+
+Test Case 26 		(Key = 1.1.2.1.1.1.1.1.4.1.1.1.1.0.1.1.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 27 		(Key = 1.1.2.1.1.1.1.1.4.1.1.1.1.0.1.2.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 28 		(Key = 1.1.2.1.1.1.1.1.4.1.1.1.1.0.1.3.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 29 		(Key = 1.1.2.1.1.1.1.1.4.1.1.1.1.0.3.1.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 30 		(Key = 1.1.2.1.1.1.1.1.4.1.1.1.1.0.3.2.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 31 		(Key = 1.1.2.1.1.1.1.1.4.1.1.1.1.0.3.3.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 32 		(Key = 1.1.2.1.1.1.1.1.4.2.1.0.0.1.1.1.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 33 		(Key = 1.1.2.1.1.1.1.1.4.2.1.0.0.1.1.2.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 34 		(Key = 1.1.2.1.1.1.1.1.4.2.1.0.0.1.1.3.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 35 		(Key = 1.1.2.1.1.1.1.1.4.2.1.0.0.1.3.1.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 36 		(Key = 1.1.2.1.1.1.1.1.4.2.1.0.0.1.3.2.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 37 		(Key = 1.1.2.1.1.1.1.1.4.2.1.0.0.1.3.3.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 38 		(Key = 1.1.2.1.1.1.1.1.4.4.0.0.0.0.1.1.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 39 		(Key = 1.1.2.1.1.1.1.1.4.4.0.0.0.0.1.2.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 40 		(Key = 1.1.2.1.1.1.1.1.4.4.0.0.0.0.1.3.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 41 		(Key = 1.1.2.1.1.1.1.1.4.4.0.0.0.0.3.1.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 42 		(Key = 1.1.2.1.1.1.1.1.4.4.0.0.0.0.3.2.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 43 		(Key = 1.1.2.1.1.1.1.1.4.4.0.0.0.0.3.3.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Present
+   k param input                                  :  Less than file length
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 44 		(Key = 1.1.2.1.1.1.1.2.0.1.1.1.1.0.1.1.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 45 		(Key = 1.1.2.1.1.1.1.2.0.1.1.1.1.0.1.2.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 46 		(Key = 1.1.2.1.1.1.1.2.0.1.1.1.1.0.1.3.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 47 		(Key = 1.1.2.1.1.1.1.2.0.1.1.1.1.0.3.1.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 48 		(Key = 1.1.2.1.1.1.1.2.0.1.1.1.1.0.3.2.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 49 		(Key = 1.1.2.1.1.1.1.2.0.1.1.1.1.0.3.3.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only p
+   p and t num input                              :  Integer
+   p input is valid                               :  char and num
+   p maxPadding num range                         :  1 to 100
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 50 		(Key = 1.1.2.1.1.1.1.2.0.2.1.0.0.1.1.1.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 51 		(Key = 1.1.2.1.1.1.1.2.0.2.1.0.0.1.1.2.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 52 		(Key = 1.1.2.1.1.1.1.2.0.2.1.0.0.1.1.3.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 53 		(Key = 1.1.2.1.1.1.1.2.0.2.1.0.0.1.3.1.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 54 		(Key = 1.1.2.1.1.1.1.2.0.2.1.0.0.1.3.2.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 55 		(Key = 1.1.2.1.1.1.1.2.0.2.1.0.0.1.3.3.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Only t
+   p and t num input                              :  Integer
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  0 to 100
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 56 		(Key = 1.1.2.1.1.1.1.2.0.4.0.0.0.0.1.1.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 57 		(Key = 1.1.2.1.1.1.1.2.0.4.0.0.0.0.1.2.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 58 		(Key = 1.1.2.1.1.1.1.2.0.4.0.0.0.0.1.3.3.0.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Only f
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  <n/a>
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 59 		(Key = 1.1.2.1.1.1.1.2.0.4.0.0.0.0.3.1.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Bold
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 60 		(Key = 1.1.2.1.1.1.1.2.0.4.0.0.0.0.3.2.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Italic
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+
+
+Test Case 61 		(Key = 1.1.2.1.1.1.1.2.0.4.0.0.0.0.3.3.3.1.1.2.)
+   Presence of the input file in the folder       :  File exist
+   Newline at end of file                         :  Present
+   Empty file                                     :  Not empty
+   Last parameter is input file                   :  Present
+   Repeated options, only last occurrence applies :  True
+   Execution order                                :  Follow programmed order
+   Each option is recognized with given format    :  Recognized
+   Presence of k                                  :  Not present
+   k param input                                  :  <n/a>
+   Presence of p and t                            :  Neither
+   p and t num input                              :  <n/a>
+   p input is valid                               :  <n/a>
+   p maxPadding num range                         :  <n/a>
+   t num range                                    :  <n/a>
+   Presence of f and g                            :  Both f and g
+   f style parameter                              :  Code
+   f substring parameter                          :  Not empty
+   g param                                        :  Null
+   r is present in command                        :  Present
+   r param                                        :  Not present
+

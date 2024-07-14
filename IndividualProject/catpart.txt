@@ -1,0 +1,94 @@
+############
+#INPUT FILE#
+############
+    Presence of the input file in the folder:
+	    File exist.
+		File does not exist.	                [error]
+	Newline at end of file:
+		Present.
+		Not present.                            [error]
+	Empty file:
+		Empty.			                        [single]
+		Not empty.
+    Last parameter is input file:
+        Present.
+        Not present.                            [error]
+
+###############
+#INPUT OPTIONS#
+###############
+    Repeated options, only last occurrence applies:
+        True.
+        False.                  [error]
+
+    Execution order:
+        Follow programmed order.
+        Not follow programmed order.       [error]
+
+    Each option is recognized with given format:
+        Recognized.
+        Not recognized.         [error]
+
+#each options
+
+#-k: filter text with given string
+    Presence of k:
+        Present.                [property hasK]
+        Not present.
+    k param input:
+        Null.                   [error]
+        0.                      [if hasK][single]
+        More than file length.  [if hasK][error]
+        Less than file length.  [if hasK]
+
+#-p: add <symbol> to the beginning of each line until the line reaches <maxPadding> length.
+#-t: truncate line to <num> length
+    Presence of p and t:
+        Only p.                 [property hasP]
+        Only t.                 [property hasT]
+        Both p and t.           [error]
+        Neither.
+    p and t num input:
+        Integer.                [if hasP || hasT][property areInt]
+        Non-integer.            [error]
+    p input is valid:
+        char and num.           [if hasP]
+        Null.                   [error]
+        Not char and num.       [error]
+    p maxPadding num range:
+        1 to 100.               [if hasP && areInt]
+        <1 and >100.            [error]
+    t num range:
+        0 to 100.               [if hasT && areInt]
+        <0 and >100.            [error]
+
+
+#-f: format given substring as bold**, italic* or code`
+    Presence of f and g:
+        Only f.                 [property hasF]
+        Only g.                 [error]
+        Both f and g.           [property hasFG]
+        Neither.                [single]
+
+    f style parameter:
+        Bold.               [if hasF || hasFG]
+        Italic.             [if hasF || hasFG]
+        Code.               [if hasF || hasFG]
+        Anything else.      [error]
+        Null.              [error]
+    f substring parameter:
+       Empty.                   [error]
+       Null.                    [error]
+       Not empty.               [if hasF || hasFG]
+
+    g param:
+        Null.                   [if hasFG]
+        Not null.               [error]
+
+#-r: reverse line
+    r is present in command:
+        Present.        [property hasR]
+        Not present.    [single]
+    r param:
+        Present.        [error]
+        Not present.    [if hasR]
