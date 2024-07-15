@@ -143,14 +143,13 @@ public class MyMainTest {
         String expectedWrongValue = "Tes" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-t","3","-t","5" inputFile.toString()};
+        String[] args = {"-t","3","-t","5", inputFile.toString()};
         Main.main(args);
 
         //the wrong value is not the same as output.
         Assertions.assertNotEquals(expectedWrongValue, getFileContent(inputFile));
         //no error messsage because it's not user issue
         Assertions.assertFalse(capture.stderr().isEmpty());
-
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
@@ -171,8 +170,7 @@ public class MyMainTest {
         Assertions.assertNotEquals(expectedWrongValue, getFileContent(inputFile));
         //no error messsage because it's not user issue
         Assertions.assertFalse(capture.stderr().isEmpty());
-
-        Assertions.assertEquals(input, getFileContent(inputFile);
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -180,14 +178,14 @@ public class MyMainTest {
     // unrecognized option
     public void moditextTest7() {
         String input = "Test 7" + System.lineSeparator();
-
         Path inputFile = createFile(input);
         String[] args = {"-v","2", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
         Assertions.assertEquals(usageStr, capture.stderr());
-        Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(input, getFileContent(inputFile)
+        );
     }
 
     @Test
@@ -197,7 +195,7 @@ public class MyMainTest {
         String input = "Test 8" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"k", inputFile.toString()};
+        String[] args = {"-k", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
