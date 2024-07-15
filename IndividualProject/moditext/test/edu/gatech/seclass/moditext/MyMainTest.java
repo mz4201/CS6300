@@ -772,7 +772,6 @@ public class MyMainTest {
     @Test
     // Frame 42:
     public void moditextTest42() {
-        public void moditextTest39() {
             String input = "Test 42 Line 1" + System.lineSeparator()
                     + "Test 42 Line 2" + System.lineSeparator()
                     + "Test 42 Line 42" + System.lineSeparator();
