@@ -258,7 +258,7 @@ public class MyMainTest {
         String input = "Test 12" + System.lineSeparator();;
 
         Path inputFile = createFile(input);
-        String[] args = {"-p","*",""4.5",inputFile.toString()};
+        String[] args = {"-p","*","4.5",inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
