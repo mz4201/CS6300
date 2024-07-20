@@ -215,8 +215,8 @@ public class MyMainTest {
         String[] args = {"-k","", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
-        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
