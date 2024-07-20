@@ -1365,21 +1365,18 @@ public class MyMainTest {
             Assertions.assertEquals(input, getFileContent(inputFile));
         }
 
+
     @Test
-    public void moditextTest75() {
-        String input = "No formatting applied." + System.lineSeparator();
-        String expected = input;
+    public void moditextTest77() {
+        String input = "Single line text." + System.lineSeparator();
+        String expected = "Single line *text*." + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {inputFile.toString()};
+        String[] args = {"-f", "italic", "text", "-r", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
-
- 
-
-
 }
