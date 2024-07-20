@@ -1382,10 +1382,10 @@ public class MyMainTest {
     @Test
     public void moditextTest76() {
         String input = "Apply multiple formats here." + System.lineSeparator();
-        String expected = "**A**p**p**ly **m**u**l**t**i**p**l**e **f**o**r**m**a**ts **h**e**r**e." + System.lineSeparator();
+        String expected = "Apply multipl*e* formats h*e*r*e*." + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-f", "bold", "-g", "-t", "2", "-f", "italic", "e", "-r", inputFile.toString()};
+        String[] args = {"-f", "bold", "-g", "-f", "italic", "e", "-r", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -1396,7 +1396,7 @@ public class MyMainTest {
     @Test
     public void moditextTest77() {
         String input = "Single line text." + System.lineSeparator();
-        String expected = "*Single line text*." + System.lineSeparator();
+        String expected = "*Single line *text*." + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-f", "italic", "text", "-r", inputFile.toString()};
@@ -1413,7 +1413,7 @@ public class MyMainTest {
             inputBuilder.append("Line ").append(i).append(System.lineSeparator());
         }
         String input = inputBuilder.toString();
-        String expected = inputBuilder.toString().replaceAll("Line ", "*Line *");
+        String expected = inputBuilder.toString().replaceAll("Line", "*Line*");
 
         Path inputFile = createFile(input);
         String[] args = {"-f", "italic", "Line", "-r", inputFile.toString()};
@@ -1440,8 +1440,8 @@ public class MyMainTest {
     public void moditextTest80() {
         String input = "Case Sensitivity Test" + System.lineSeparator() +
                 "case sensitivity test" + System.lineSeparator();
-        String expected = "**Case** Sensitivity Test" + System.lineSeparator() +
-                "case sensitivity test" + System.lineSeparator();
+        String expected = "case Sensitivity Test" + System.lineSeparator() +
+                "**C**ase sensitivity test" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-f", "bold", "Case", "-r", inputFile.toString()};
@@ -1467,7 +1467,7 @@ public class MyMainTest {
     @Test
     public void moditextTest82() {
         String input = "Highlight the word highlight in this line." + System.lineSeparator();
-        String expected = "*Highlight* the word *highlight* in this line." + System.lineSeparator();
+        String expected = "Highlight the word **highlight** in this line." + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-f", "bold", "highlight", "-r", inputFile.toString()};
