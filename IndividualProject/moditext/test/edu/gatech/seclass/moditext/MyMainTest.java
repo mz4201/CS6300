@@ -1364,4 +1364,118 @@ public class MyMainTest {
             Assertions.assertEquals(usageStr, capture.stderr());
             Assertions.assertEquals(input, getFileContent(inputFile));
         }
+
+    @Test
+    public void moditextTest75() {
+        String input = "No formatting applied." + System.lineSeparator();
+        String expected = input;
+
+        Path inputFile = createFile(input);
+        String[] args = {inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest76() {
+        String input = "Apply multiple formats here." + System.lineSeparator();
+        String expected = "**A**p**p**ly **m**u**l**t**i**p**l**e **f**o**r**m**a**ts **h**e**r**e." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "bold", "-g", "-t", "2", "-f", "italic", "e", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest77() {
+        String input = "Single line text." + System.lineSeparator();
+        String expected = "*Single line text*." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "italic", "text", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+    @Test
+    public void moditextTest78() {
+        StringBuilder inputBuilder = new StringBuilder();
+        for (int i = 0; i < 1000; i++) {
+            inputBuilder.append("Line ").append(i).append(System.lineSeparator());
+        }
+        String input = inputBuilder.toString();
+        String expected = inputBuilder.toString().replaceAll("Line ", "*Line *");
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "italic", "Line", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+    @Test
+    public void moditextTest79() {
+        String input = "Special characters: @#$%^&*()" + System.lineSeparator();
+        String expected = "*Special* characters: @#$%^&*()" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "italic", "Special", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+    @Test
+    public void moditextTest80() {
+        String input = "Case Sensitivity Test" + System.lineSeparator() +
+                "case sensitivity test" + System.lineSeparator();
+        String expected = "**Case** Sensitivity Test" + System.lineSeparator() +
+                "case sensitivity test" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "bold", "Case", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+    @Test
+    public void moditextTest81() {
+        String input = "No matching text here." + System.lineSeparator();
+        String expected = input;
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "bold", "nonexistent", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+    @Test
+    public void moditextTest82() {
+        String input = "Highlight the word highlight in this line." + System.lineSeparator();
+        String expected = "*Highlight* the word *highlight* in this line." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "bold", "highlight", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
 }
