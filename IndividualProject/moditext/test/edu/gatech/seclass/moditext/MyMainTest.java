@@ -225,7 +225,7 @@ public class MyMainTest {
     // k parameter is more than file length
     public void moditextTest10() {
         String input = "Test 10" + System.lineSeparator();
-        String expected = "" + System.lineSeparator();
+        String expected = System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k", "Test 10 parameter is more than file length", inputFile.toString()};
@@ -353,7 +353,7 @@ public class MyMainTest {
         String[] args = {"-k","2","-t","10", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -483,7 +483,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-p","a","15","-f","bold","2","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -502,7 +502,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-p","a","15","-f","italic","2","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -521,7 +521,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-p","a","15","-f","code","2","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -540,7 +540,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-p","a","15","-g","-f","bold","2","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -559,7 +559,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-p","a","15","-g","-f","italic","3","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -578,7 +578,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-p","a","15","-g","-f","code","3","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -597,7 +597,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-t","10","-f","bold","3","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -616,7 +616,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-t","10","-f","italic","3","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -635,7 +635,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-t","10","-f","code","3","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -654,7 +654,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-t","12","-g","-f","bold","e","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -673,7 +673,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-t","12","-g","-f","bold","e","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -692,7 +692,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-t","12","-g","-f","bold","e","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -711,7 +711,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-f","bold","e","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -730,7 +730,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-f","italic","e","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -749,7 +749,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-f","code","e","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -768,7 +768,7 @@ public class MyMainTest {
         String[] args = {"-k","Line","-g","-f","bold","e","-r", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -787,9 +787,9 @@ public class MyMainTest {
             String[] args = {"-k","Line","-g","-f","italic","e","-r", inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -806,9 +806,9 @@ public class MyMainTest {
             String[] args = {"-k","Line","-g","-f","code","e","-r", inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -825,9 +825,9 @@ public class MyMainTest {
         String[] args = {"-p","o","20","-f","bold","e","-r",inputFile.toString()};
         Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -844,9 +844,9 @@ public class MyMainTest {
             String[] args = {"-p","o","20","-f","italic","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -863,9 +863,9 @@ public class MyMainTest {
             String[] args = {"-p","o","20","-f","code","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -882,9 +882,9 @@ public class MyMainTest {
             String[] args = {"-p","o","20","-g","-f","bold","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -901,9 +901,9 @@ public class MyMainTest {
             String[] args = {"-p","o","20","-g","-f","italic","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -920,9 +920,9 @@ public class MyMainTest {
             String[] args = {"-p","o","20","-g","-f","code","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -939,9 +939,9 @@ public class MyMainTest {
             String[] args = {"-t","12","-f","bold","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -958,9 +958,9 @@ public class MyMainTest {
             String[] args = {"-t","12","-f","italic","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -977,9 +977,9 @@ public class MyMainTest {
             String[] args = {"-t","12","-f","code","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -996,9 +996,9 @@ public class MyMainTest {
             String[] args = {"-t","12","-g","-f","bold","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1015,9 +1015,9 @@ public class MyMainTest {
             String[] args = {"-t","12","-g","-f","italic","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1034,9 +1034,9 @@ public class MyMainTest {
             String[] args = {"-t","12","-g","-f","code","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1051,9 +1051,9 @@ public class MyMainTest {
             String[] args = {"-f","bold","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1068,9 +1068,9 @@ public class MyMainTest {
             String[] args = {"-f","italic","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1085,9 +1085,9 @@ public class MyMainTest {
             String[] args = {"-f","code","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1102,9 +1102,9 @@ public class MyMainTest {
             String[] args = {"-g","-f","bold","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1119,9 +1119,9 @@ public class MyMainTest {
             String[] args = {"-g","-f","italic","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
     @Test
@@ -1136,9 +1136,9 @@ public class MyMainTest {
             String[] args = {"-g","-f","code","e","-r",inputFile.toString()};
             Main.main(args);
 
-            Assertions.assertEquals(expected, getFileContent(inputFile));
-            Assertions.assertTrue(capture.stderr().isEmpty());
-            Assertions.assertEquals(input, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
 
