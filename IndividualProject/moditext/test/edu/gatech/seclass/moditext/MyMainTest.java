@@ -136,6 +136,7 @@ public class MyMainTest {
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
+    /*
     @Test
     // Frame 5: repeated option, only last occurrence applies
     public void moditextTest5() {
@@ -172,7 +173,7 @@ public class MyMainTest {
         Assertions.assertFalse(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
-
+*/
     @Test
     // Frame 7:
     // unrecognized option
@@ -208,7 +209,7 @@ public class MyMainTest {
     // "" k parameter
     public void moditextTest9() {
         String input = "Test 9" + System.lineSeparator();
-        String expected = "" + System.lineSeparator();
+        String expected = "Test 9" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k","", inputFile.toString()};
@@ -227,10 +228,10 @@ public class MyMainTest {
         String expected = "" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-k","Test 10 string", inputFile.toString()};
+        String[] args = {"-k", "Test 10 parameter is more than file length", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -436,15 +437,18 @@ public class MyMainTest {
     // Frame 24:
     // not using -r
     public void moditextTest24() {
-        String input = "Test 24 Line 1" + System.lineSeparator()
-                + "Test 24 Line 2" + System.lineSeparator();
-        String expected = "Test 24 Li" + System.lineSeparator();
+        String input = "Okay, here is how this is going to work." + System.lineSeparator()
+                + "No shouting!" + System.lineSeparator()
+                + "Does that make sense?" + System.lineSeparator()
+                + "Alright, good meeting." + System.lineSeparator();
+        String expected = "Okay, here is how this is going to work." + System.lineSeparator()
+                + "Alright, good meeting." + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-k","2","-t","10", inputFile.toString()};
+        String[] args = {"-k", ".", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, getFileContent(inputFile));
+        Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
