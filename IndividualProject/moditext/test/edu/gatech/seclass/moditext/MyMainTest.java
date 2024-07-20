@@ -1365,14 +1365,13 @@ public class MyMainTest {
             Assertions.assertEquals(input, getFileContent(inputFile));
         }
 
-
     @Test
-    public void moditextTest77() {
-        String input = "Single line text." + System.lineSeparator();
-        String expected = "Single line *text*." + System.lineSeparator();
+    public void moditextTest75() {
+        String input = "Apply multiple formats here." + System.lineSeparator();
+        String expected = "Apply multipl*e* formats h*e*r*e*." + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-f", "italic", "text", "-r", inputFile.toString()};
+        String[] args = {"-f", "bold", "-g", "-f", "italic", "e", "-r", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
