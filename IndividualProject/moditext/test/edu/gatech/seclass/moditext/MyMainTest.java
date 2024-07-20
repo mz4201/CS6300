@@ -216,7 +216,7 @@ public class MyMainTest {
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
-        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
