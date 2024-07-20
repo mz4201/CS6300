@@ -468,7 +468,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr, capture.stderr());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
-    Test **2**6 Line 26 aTest **2**6 Line 2 aTest **2**6 Line 1
+
     @Test
     // Frame 26:
     public void moditextTest26() {
