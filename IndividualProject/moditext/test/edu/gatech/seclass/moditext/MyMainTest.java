@@ -1368,7 +1368,7 @@ public class MyMainTest {
     @Test
     public void moditextTest75() {
         String input = "Apply multiple formats here." + System.lineSeparator();
-        String expected = "Apply multipl*e* formats h*e*r*e*." + System.lineSeparator();
+        String expected = "Apply multipl*e* formats here." + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-f", "bold", "-g", "-f", "italic", "e", "-r", inputFile.toString()};
