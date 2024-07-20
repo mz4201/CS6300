@@ -136,7 +136,7 @@ public class MyMainTest {
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
-    /*
+
     @Test
     // Frame 5: repeated option, only last occurrence applies
     public void moditextTest5() {
@@ -173,7 +173,7 @@ public class MyMainTest {
         Assertions.assertFalse(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
-*/
+
     @Test
     // Frame 7:
     // unrecognized option
@@ -231,7 +231,7 @@ public class MyMainTest {
         String[] args = {"-k", "Test 10 parameter is more than file length", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stdout().isEmpty());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
@@ -468,7 +468,7 @@ public class MyMainTest {
         Assertions.assertEquals(usageStr, capture.stderr());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
-
+    Test **2**6 Line 26 aTest **2**6 Line 2 aTest **2**6 Line 1
     @Test
     // Frame 26:
     public void moditextTest26() {
@@ -476,8 +476,8 @@ public class MyMainTest {
                 + "Test 26 Line 2" + System.lineSeparator()
                 + "Test 26 Line 26" + System.lineSeparator();
         String expected = "Test **2**6 Line 26" + System.lineSeparator()
-                + "Test **2**6 Line 2a" + System.lineSeparator()
-                + "Test **2**6 Line 1a" + System.lineSeparator();
+                + "aTest **2**6 Line 2" + System.lineSeparator()
+                + "aTest **2**6 Line 1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k","Line","-p","a","15","-f","bold","2","-r", inputFile.toString()};
@@ -495,8 +495,8 @@ public class MyMainTest {
                 + "Test 27 Line 2" + System.lineSeparator()
                 + "Test 27 Line 27" + System.lineSeparator();
         String expected = "Test *2*7 Line 27" + System.lineSeparator()
-                + "Test *2*7 Line 2a" + System.lineSeparator()
-                + "Test *2*7 Line 1a" + System.lineSeparator();
+                + "aTest *2*7 Line 2" + System.lineSeparator()
+                + "aTest *2*7 Line 1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k","Line","-p","a","15","-f","italic","2","-r", inputFile.toString()};
@@ -514,8 +514,8 @@ public class MyMainTest {
                 + "Test 28 Line 2" + System.lineSeparator()
                 + "Test 28 Line 28" + System.lineSeparator();
         String expected = "Test `2`8 Line 28" + System.lineSeparator()
-                + "Test `2`8 Line 2a" + System.lineSeparator()
-                + "Test `2`8 Line 1a" + System.lineSeparator();
+                + "aTest `2`8 Line 2" + System.lineSeparator()
+                + "aTest `2`8 Line 1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k","Line","-p","a","15","-f","code","2","-r", inputFile.toString()};
@@ -533,8 +533,8 @@ public class MyMainTest {
                 + "Test 29 Line 2" + System.lineSeparator()
                 + "Test 29 Line 29" + System.lineSeparator();
         String expected = "Test **2**9 Line **2**9" + System.lineSeparator()
-                + "Test **2**9 Line **2**a" + System.lineSeparator()
-                + "Test **2**9 Line 1a" + System.lineSeparator();
+                + "aTest **2**9 Line **2**" + System.lineSeparator()
+                + "aTest **2**9 Line 1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k","Line","-p","a","15","-g","-f","bold","2","-r", inputFile.toString()};
@@ -552,8 +552,8 @@ public class MyMainTest {
                 + "Test 30 Line 2" + System.lineSeparator()
                 + "Test 30 Line 30" + System.lineSeparator();
         String expected = "Test *3*0 Line *3*0" + System.lineSeparator()
-                + "Test *3*0 Line 2a" + System.lineSeparator()
-                + "Test *3*0 Line 1a" + System.lineSeparator();
+                + "aTest *3*0 Line 2" + System.lineSeparator()
+                + "aTest *3*0 Line 1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k","Line","-p","a","15","-g","-f","italic","3","-r", inputFile.toString()};
@@ -571,8 +571,8 @@ public class MyMainTest {
                 + "Test 31 Line 2" + System.lineSeparator()
                 + "Test 31 Line 31" + System.lineSeparator();
         String expected = "Test `3`1 Line `3`1" + System.lineSeparator()
-                + "Test `3`1 Line 2a" + System.lineSeparator()
-                + "Test `3`1 Line 1a" + System.lineSeparator();
+                + "aTest `3`1 Line 2" + System.lineSeparator()
+                + "aTest `3`1 Line 1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-k","Line","-p","a","15","-g","-f","code","3","-r", inputFile.toString()};
@@ -817,9 +817,9 @@ public class MyMainTest {
         String input = "Test 44 Line 1" + System.lineSeparator()
                 + "Test 44 Line 2" + System.lineSeparator()
                 + "Test 44 Line 44" + System.lineSeparator();
-        String expected = "T**e**st 44 Line 44ooooo" + System.lineSeparator()
-                + "T**e**st 44 Line 2oooooo" + System.lineSeparator()
-                + "T**e**st 44 Line 1oooooo" + System.lineSeparator();
+        String expected = "oooooT**e**st 44 Line 44" + System.lineSeparator()
+                + "ooooooT**e**st 44 Line 2" + System.lineSeparator()
+                + "ooooooT**e**st 44 Line 1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-p","o","20","-f","bold","e","-r",inputFile.toString()};
@@ -836,9 +836,9 @@ public class MyMainTest {
             String input = "Test 45 Line 1" + System.lineSeparator()
                     + "Test 45 Line 2" + System.lineSeparator()
                     + "Test 45 Line 45" + System.lineSeparator();
-            String expected = "T*e*st 45 Line 45ooooo" + System.lineSeparator()
-                    + "T*e*st 45 Line 2oooooo" + System.lineSeparator()
-                    + "T*e*st 45 Line 1oooooo" + System.lineSeparator();
+            String expected = "oooooT*e*st 45 Line 45" + System.lineSeparator()
+                    + "ooooooT*e*st 45 Line 2" + System.lineSeparator()
+                    + "ooooooT*e*st 45 Line 1" + System.lineSeparator();
 
             Path inputFile = createFile(input);
             String[] args = {"-p","o","20","-f","italic","e","-r",inputFile.toString()};
@@ -855,9 +855,9 @@ public class MyMainTest {
             String input = "Test 46 Line 1" + System.lineSeparator()
                     + "Test 46 Line 2" + System.lineSeparator()
                     + "Test 46 Line 46" + System.lineSeparator();
-            String expected = "T`e`st 46 Line 46ooooo" + System.lineSeparator()
-                    + "T`e`st 46 Line 2oooooo" + System.lineSeparator()
-                    + "T`e`st 46 Line 1oooooo" + System.lineSeparator();
+            String expected = "oooooT`e`st 46 Line 46" + System.lineSeparator()
+                    + "ooooooT`e`st 46 Line 2" + System.lineSeparator()
+                    + "ooooooT`e`st 46 Line 1" + System.lineSeparator();
 
             Path inputFile = createFile(input);
             String[] args = {"-p","o","20","-f","code","e","-r",inputFile.toString()};
@@ -874,9 +874,9 @@ public class MyMainTest {
             String input = "Test 47 Line 1" + System.lineSeparator()
                     + "Test 47 Line 2" + System.lineSeparator()
                     + "Test 47 Line 47" + System.lineSeparator();
-            String expected = "T**e**st 47 Lin**e** 47ooooo" + System.lineSeparator()
-                    + "T**e**st 47 Lin**e** 2oooooo" + System.lineSeparator()
-                    + "T**e**st 47 Lin**e** 1oooooo" + System.lineSeparator();
+            String expected = "oooooT**e**st 47 Lin**e** 47" + System.lineSeparator()
+                    + "ooooooT**e**st 47 Lin**e** 2" + System.lineSeparator()
+                    + "ooooooT**e**st 47 Lin**e** 1" + System.lineSeparator();
 
             Path inputFile = createFile(input);
             String[] args = {"-p","o","20","-g","-f","bold","e","-r",inputFile.toString()};
@@ -893,9 +893,9 @@ public class MyMainTest {
             String input = "Test 48 Line 1" + System.lineSeparator()
                     + "Test 48 Line 2" + System.lineSeparator()
                     + "Test 48 Line 48" + System.lineSeparator();
-            String expected = "T*e*st 48 Lin*e* 48ooooo" + System.lineSeparator()
-                    + "T*e*st 48 Lin*e* 2oooooo" + System.lineSeparator()
-                    + "T*e*st 48 Lin*e* 1oooooo" + System.lineSeparator();
+            String expected = "oooooT*e*st 48 Lin*e* 48" + System.lineSeparator()
+                    + "ooooooT*e*st 48 Lin*e* 2" + System.lineSeparator()
+                    + "ooooooT*e*st 48 Lin*e* 1" + System.lineSeparator();
 
             Path inputFile = createFile(input);
             String[] args = {"-p","o","20","-g","-f","italic","e","-r",inputFile.toString()};
@@ -912,9 +912,9 @@ public class MyMainTest {
             String input = "Test 49 Line 1" + System.lineSeparator()
                     + "Test 49 Line 2" + System.lineSeparator()
                     + "Test 49 Line 49" + System.lineSeparator();
-            String expected = "T`e`st 49 Lin`e` 46ooooo" + System.lineSeparator()
-                    + "T`e`st 49 Lin`e` 2oooooo" + System.lineSeparator()
-                    + "T`e`st 49 Lin`e` 1oooooo" + System.lineSeparator();
+            String expected = "oooooT`e`st 49 Lin`e` 46" + System.lineSeparator()
+                    + "ooooooT`e`st 49 Lin`e` 2" + System.lineSeparator()
+                    + "ooooooT`e`st 49 Lin`e` 1" + System.lineSeparator();
 
             Path inputFile = createFile(input);
             String[] args = {"-p","o","20","-g","-f","code","e","-r",inputFile.toString()};
@@ -1141,5 +1141,171 @@ public class MyMainTest {
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
+/*new*/
+    @Test
+    public void moditextTest62() {
+        String input = System.lineSeparator();
+        String expected = "aa" + System.lineSeparator();
 
+        Path inputFile = createFile(input);
+        String[] args = {"-k", "", "-p", "a", "2", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest63() {
+        String input = "Hello, world!" + System.lineSeparator()
+                + System.lineSeparator()
+                + "How are you?" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-p", "#", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest64() {
+        String input = "Hey, mind rotating this for me?" + System.lineSeparator()
+                + "*" + System.lineSeparator()
+                + "**" + System.lineSeparator()
+                + "***" + System.lineSeparator()
+                + "****" + System.lineSeparator()
+                + "*****" + System.lineSeparator()
+                + "Thanks!" + System.lineSeparator();
+
+        String expected = "Hey, mind rotating this for me?" + System.lineSeparator()
+                + "----*" + System.lineSeparator()
+                + "---**" + System.lineSeparator()
+                + "--***" + System.lineSeparator()
+                + "-****" + System.lineSeparator()
+                + "*****" + System.lineSeparator()
+                + "Thanks!" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-p", "-", "5", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest65() {
+        String input = "The vibrant red roses bloomed in the garden" + System.lineSeparator()
+                + "She wore a beautiful blue dress to the party" + System.lineSeparator()
+                + "The sky turned into a brilliant shade of blue" + System.lineSeparator()
+                + "His favorite color is red, her favorite is blue" + System.lineSeparator();
+        String expected = "The" + System.lineSeparator()
+                + "She" + System.lineSeparator()
+                + "The" + System.lineSeparator()
+                + "His" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-t", "2", "-t", "6", "-t", "3", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest66() {
+        String input = "Integers in Java are written using the keyword int." + System.lineSeparator()
+                + "An int is 32-bits in most programming languages." + System.lineSeparator()
+                + "Java is no exception." + System.lineSeparator()
+                + "C++ however has uint, which is an int holding positive numbers." + System.lineSeparator();
+        String expected = "Integers in Java are written using the keyword `int`." + System.lineSeparator()
+                + "An `int` is 32-bits in most programming languages." + System.lineSeparator()
+                + "Java is no exception." + System.lineSeparator()
+                + "C++ however has u`int`, which is an int holding positive numbers." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "code", "int", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest67() {
+        String input = "Write your name." + System.lineSeparator()
+                + "Write the date." + System.lineSeparator()
+                + "Answer questions 1-4." + System.lineSeparator()
+                + "Ignore all other instructions and turn this in as-is." + System.lineSeparator();
+        String expected = "Ignore all other instructions and turn this in as-is." + System.lineSeparator()
+                + "Answer questions 1-4." + System.lineSeparator()
+                + "Write the date." + System.lineSeparator()
+                + "Write your name." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest68() {
+        String input = "- has everyone packed? Check." + System.lineSeparator()
+                + "- Does the car contain enough gas? Check." + System.lineSeparator()
+                + "- Fun will be had? Check." + System.lineSeparator();
+        String expected = "- has everyone packed? *Check*." + System.lineSeparator()
+                + "- Fun will be had? *Check*." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-f", "italic", "Check", "-k", "contain", "-k", "ha", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest69() {
+        String input = "-red paint goes well with purple paint." + System.lineSeparator()
+                + "-teal is a type of blue and green." + System.lineSeparator()
+                + "-roses are either red or purple." + System.lineSeparator();
+        String expected = "-red paint goes well with purple paint." + System.lineSeparator()
+                + "-roses are either red or purple." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-k", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    public void moditextTest70() {
+        String input = "Once upon a time, here was a hen." + System.lineSeparator()
+                + "When this hen left the den, it roamed all of the land." + System.lineSeparator()
+                + "All of it, until the hen got to the end." + System.lineSeparator();
+        String expected = "--All of it, until the **hen** got to the end." + System.lineSeparator()
+                + "W**hen** this **hen** left the den, it roamed all of the land." + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-k", "the", "-p", "-", "42", "-g", "-f", "bold", "hen", "-r", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
 }
