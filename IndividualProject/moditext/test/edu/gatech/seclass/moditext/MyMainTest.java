@@ -258,7 +258,7 @@ public class MyMainTest {
         String input = "Test 12" + System.lineSeparator();;
 
         Path inputFile = createFile(input);
-        String[] args = {"-p", "4.5",inputFile.toString()};
+        String[] args = {"-p","*",""4.5",inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
@@ -1308,4 +1308,60 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
+
+    @Test
+    // p maxPadding range is > 100
+    public void moditextTest71() {
+        String input = "Test 71" + System.lineSeparator();;
+
+        Path inputFile = createFile(input);
+        String[] args = {"-p","*","101",inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+        @Test
+        //p input is not char
+        public void moditextTest72() {
+            String input = "Test 72" + System.lineSeparator();;
+
+            Path inputFile = createFile(input);
+            String[] args = {"-p","cc","5",inputFile.toString()};
+            Main.main(args);
+
+            Assertions.assertTrue(capture.stdout().isEmpty());
+            Assertions.assertEquals(usageStr, capture.stderr());
+            Assertions.assertEquals(input, getFileContent(inputFile));
+        }
+
+        @Test
+        // t range is >100
+        public void moditextTest73() {
+            String input = "Test 73" + System.lineSeparator();;
+
+            Path inputFile = createFile(input);
+            String[] args = {"-t","101",inputFile.toString()};
+            Main.main(args);
+
+            Assertions.assertTrue(capture.stdout().isEmpty());
+            Assertions.assertEquals(usageStr, capture.stderr());
+            Assertions.assertEquals(input, getFileContent(inputFile));
+        }
+
+        @Test
+        // t range is non integer
+        public void moditextTest74() {
+            String input = "Test 74" + System.lineSeparator();;
+
+            Path inputFile = createFile(input);
+            String[] args = {"-t","c",inputFile.toString()};
+            Main.main(args);
+
+            Assertions.assertTrue(capture.stdout().isEmpty());
+            Assertions.assertEquals(usageStr, capture.stderr());
+            Assertions.assertEquals(input, getFileContent(inputFile));
+        }
 }
