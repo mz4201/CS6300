@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 public class Main {
 
     private static final String separator = System.lineSeparator();
-    private static boolean errorStat = false;
-    private static boolean  emptyOutput = false;
+    public static boolean errorStat = false;
+    public static boolean  emptyOutput = false;
 
     public static void main(String[] args) {
         errorStat = false;
@@ -204,6 +204,7 @@ public class Main {
     public static String keepLines(String content, String keepLines) {
         if (keepLines.length() > content.length()) {
             emptyOutput = true; // Return an empty result
+            return "";
         }
         String[] lines = content.split(separator);
         StringBuilder result = new StringBuilder();
