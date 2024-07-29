@@ -11,16 +11,22 @@ public class Main {
 
     private static final String separator = System.lineSeparator();
     private static boolean errorStat = false;
+    private static boolean  emptyOutput = false;
+
     public static void main(String[] args) {
         errorStat = false;
+        emptyOutput = false;
         // Read arguments
         List<String> arguments = Arrays.asList(args);
 
         // Check if no arguments, or if no file added
         if (arguments.isEmpty() || !arguments.get(arguments.size() - 1).endsWith(".txt")) {
             usage();
-            errorStat = true;
             return;
+        }
+
+        if (arguments.size() == 1 && arguments.get(0).endsWith(".txt")) {
+            emptyOutput = true;
         }
 
         // Read file
@@ -31,14 +37,11 @@ public class Main {
             // Check if the last line is not a line separator
             if (!fileContent.isEmpty() && !fileContent.endsWith(separator)) {
                 usage();
-                errorStat = true;
                 return;
             }
         } catch (IOException e) {
-            // File not found, file cannot be read, network/system/disk issues etc.
-            e.printStackTrace();
+            // Handle file not found or other IO exceptions
             usage();
-            errorStat = true;
             return;
         }
 
@@ -53,7 +56,6 @@ public class Main {
             if (option.equals("-k")) {
                 String substring = options.get(++i);
                 fileContent = keepLines(fileContent, substring);
-
             } else if (option.equals("-p")) {
                 char symbol = options.get(++i).charAt(0);
                 int maxPadding = Integer.parseInt(options.get(++i));
@@ -73,7 +75,7 @@ public class Main {
                 fileContent = reverseLines(fileContent);
             }
         }
-        if(!errorStat) {
+        if (!errorStat & !emptyOutput) {
             // Output the final content
             System.out.println(fileContent);
         }
@@ -97,7 +99,6 @@ public class Main {
 
             if (!validOptions.contains(option)) {
                 usage();
-                errorStat = true;
                 return Collections.emptyList();
             }
 
@@ -107,19 +108,16 @@ public class Main {
                 case "-p":
                     if (hasTrimOption) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     hasPadOption = true;
                     if (i + 2 >= options.size() || options.get(i + 1).length() != 1 || !isInteger(options.get(i + 2))) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     int maxPadding = Integer.parseInt(options.get(i + 2));
                     if (maxPadding < 1 || maxPadding > 100) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     params.add(options.get(i + 1));
@@ -129,19 +127,16 @@ public class Main {
                 case "-t":
                     if (hasPadOption) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     hasTrimOption = true;
                     if (i + 1 >= options.size() || !isInteger(options.get(i + 1))) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     int num = Integer.parseInt(options.get(i + 1));
                     if (num < 0 || num > 100) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     params.add(options.get(i + 1));
@@ -150,7 +145,6 @@ public class Main {
                 case "-k":
                     if (i + 1 >= options.size()) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     params.add(options.get(i + 1));
@@ -159,18 +153,15 @@ public class Main {
                 case "-f":
                     if (i + 2 >= options.size()) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     String style = options.get(i + 1);
                     if (!style.equals("bold") && !style.equals("italic") && !style.equals("code")) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     if (options.get(i + 2).isEmpty()) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     params.add(style);
@@ -180,7 +171,6 @@ public class Main {
                 case "-g":
                     if (!options.contains("-f")) {
                         usage();
-                        errorStat = true;
                         return Collections.emptyList();
                     }
                     break;
@@ -212,6 +202,9 @@ public class Main {
 
     // Keep lines containing the specified substring
     public static String keepLines(String content, String keepLines) {
+        if (keepLines.length() > content.length()) {
+            emptyOutput = true; // Return an empty result
+        }
         String[] lines = content.split(separator);
         StringBuilder result = new StringBuilder();
         for (String line : lines) {
@@ -222,6 +215,7 @@ public class Main {
                 result.append(line);
             }
         }
+        // Ensure the result is empty if no lines matched
         return result.toString();
     }
 
@@ -273,7 +267,7 @@ public class Main {
                 break;
             default:
                 usage();
-                errorStat = true;
+                return content;
         }
 
         for (int i = 0; i < lines.length; i++) {
@@ -300,8 +294,9 @@ public class Main {
         return result.toString();
     }
 
-    // Print usage information
+    // Print usage information and set errorStat to true
     private static void usage() {
+        errorStat = true;  // Set errorStat to true whenever usage is called
         System.err.println("Usage: moditext [ -k substring | -p ch num | -t num | -g | -f style substring | -r ] FILE");
     }
 }
