@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+
 @Timeout(value = 1, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
 public class MyMainTest {
     // Place all of your tests in this class, optionally using MainTest.java as an example
@@ -1378,4 +1379,5 @@ public class MyMainTest {
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
+
 }
